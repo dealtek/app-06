@@ -77,6 +77,9 @@
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
     <!-- Plugins -->
+	
+	 <!-- cordova plugin add cordova-plugin-file-transfer -->
+	
 
     <!-- Core plugins -->
     <gap:plugin name="org.apache.cordova.battery-status" />
@@ -89,7 +92,7 @@
     <gap:plugin name="org.apache.cordova.device-orientation" />
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.file" />
-    <gap:plugin name="org.apache.cordova.file-transfer" />
+    <!-- <gap:plugin name="org.apache.cordova.file-transfer" /> -->
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.globalization" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
