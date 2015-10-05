@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+
+
+
+
+<script type="text/javascript" language="JavaScript">
+<!-- Copyright 2006 Bontrager Connection, LLC
+function FillForm() {
+// Specify form's name between the quotes on next line.
+var FormName = "MyForm";
+var questionlocation = location.href.indexOf('?');
+if(questionlocation < 0) { return; }
+var q = location.href.substr(questionlocation + 1);
+var list = q.split('&');
+for(var i = 0; i < list.length; i++) {
+   var kv = list[i].split('=');
+   if(! eval('document.'+FormName+'.'+kv[0])) { continue; }
+   kv[1] = unescape(kv[1]);
+   if(kv[1].indexOf('"') > -1) {
+      var re = /"/g;
+      kv[1] = kv[1].replace(re,'\\"');
+      }
+   eval('document.'+FormName+'.'+kv[0]+'.value="'+kv[1]+'"');
+   }
+}
+FillForm();
+//-->
+</script>
+
+
+
+
+</body>
+</html>

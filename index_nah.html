@@ -1,0 +1,61 @@
+<html>
+
+    <head>
+        <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery-1.10.2.min.js" ></script>        
+        
+        <script>
+
+            function onBackKeyDown() {
+                'use strict';
+                
+                var frame = window.frames[0].window;
+
+                if(frame.bCurrentLocationIsHome == true) {
+                    navigator.app.exitApp();
+                } else {
+                    frame.location.reload();
+                }
+                return false;
+            }
+            var onDeviceReady = function() {
+                'use strict';
+                
+                setDeviceInfo();
+                document.addEventListener("backbutton", onBackKeyDown, false);
+            }
+
+            function onLoad() {
+                'use strict';
+
+                if (typeof navigator.device == 'undefined' && window.location.host != '127.0.0.1'){
+                    document.addEventListener("deviceready", onDeviceReady, false);
+                } else {
+                    onDeviceReady();
+                }  
+            }
+
+            function setDeviceInfo() {
+                pgDeviceInfo = '';
+                if (window.location.host != '127.0.0.1'){
+                    pgDeviceInfo += '<p><b>device.name: </b>' + device.name + '</p>';
+                    pgDeviceInfo += '<p><b>device.model: </b>' + device.model + '</p>';
+                    pgDeviceInfo += '<p><b>device.cordova: </b>' + device.cordova + '</p>';
+                    pgDeviceInfo += '<p><b>device.phonegap: </b>' + device.phonegap + '</p>';
+                    pgDeviceInfo += '<p><b>device.platform: </b>' + device.platform + '</p>';
+                    pgDeviceInfo += '<p><b>device.uuid: </b>' + device.uuid + '</p>';
+                    pgDeviceInfo += '<p><b>device.version: </b>' + device.version + '</p>';
+                } else {
+                    pgDeviceInfo += '<p><i>no data - not native app!! </i></p>';
+                }
+                var frame = window.frames[0].window;
+                frame.pgDeviceInfo = pgDeviceInfo;
+            }
+
+        </script>
+    </head>
+
+    <body onLoad="onLoad();" style="margin:0;">
+    <iframe id="iframe" src="https://idcapp.com/mobile/" width="100%" height="100%" frameborder="0" border="0" cellspacing="0" style="background:#fff;"></iframe>
+</body>
+</html>
