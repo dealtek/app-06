@@ -141,10 +141,10 @@ Be Sure To Show The Collectors Notice To Your Collector.
 
 <br>
 
-<a class="buttonlink7" href="client-testing.php" rel="external"> <span class="bigfont2">Collectors Notice</span> </a> 
+<a class="buttonlink7" href="client-testing.html" rel="external"> <span class="bigfont2">Collectors Notice</span> </a> 
 <br>
 
-<a class="buttonlink2" href="collection-sites2.php" rel="external"> <span class="bigfont2">Alcohol Testing Collection Sites</span> </a>
+<a class="buttonlink2" href="collection-sites2.html" rel="external"> <span class="bigfont2">Alcohol Testing Collection Sites</span> </a>
 
 
 
@@ -195,20 +195,15 @@ output = "";
 
 $.each(data, function(key, value) {
             	console. log ('item', key, value);
-    			output += "<li>" + value.PHONE;  
-    			output += " " +
-				
-				
-				"LABCORP<br>TEL:" +
-				
-				
-				
-				 value.PHONE + " " + value.ADDRESS
+    			output += "<li>" + 
+				"LABCORP<br>TEL: " +
+				value.PHONE + 
+				"<br>" + value.ADDRESS
 				+ "<br> <strong>" + value.CITY
-				+ " " + value.ST
+				+ ", " + value.ST
 				+ "</strong> " + value.ZIP
-				+ "<br> Days:" + value.DAYS
-				+ " Hours:" + value.HOURS + "</li>";
+				+ "<br>Days: " + value.DAYS
+				+ "<br>Hours: " + value.HOURS + "</li>";
 			});       
             $('#list').html( output );
             $('#list').listview( "refresh" );
@@ -251,11 +246,7 @@ console. log ('item', key, value);
 
 
 
-<br><br>
-
-
 <br>
-yo<br>
 
 <div data-role="main" class="ui-content">
 <ul id="list" data-role="listview">
